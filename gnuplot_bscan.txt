@@ -1,0 +1,45 @@
+
+sample=4096
+c=3*(10**8)
+permit=25
+d=90.0
+
+#k=(d/sample)/sqrt(permit)
+
+
+dis_interval = 1
+depth_interval = k
+
+set link y2 via (y/depth_interval)+600 inverse (y-600)*depth_interval
+#set link y2 via (y/depth_interval) inverse y*depth_interval
+
+
+set link x2 via x/dis_interval inverse x*dis_interval
+
+
+set xlabel "DISTANCE [m]" font "arial,20"
+set ylabel "DEPTH [m]" font "arial,20"
+
+set xtics 
+set ytics 
+
+set xtics font "arial,10"
+set ytics font "arial,10"
+
+set yrange[6:0] reverse
+
+set palette positive
+set palette model RGB
+#set palette defined (0 "black",1 "white")
+#set palette defined (0 "white",1 "black")
+set palette defined (0 '#000fff',\
+                     1 '#90ff70',\
+                     2 '#ee0000')
+
+#set palette defined (0 "blue", 0.5 "light-grey", 1 "red")
+#set palette defined (-10 "white", 0 "blue", 0 "red", 10 "white")
+
+
+#set palette model rainbow
+#set palette model HSV
+

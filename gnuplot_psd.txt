@@ -1,0 +1,26 @@
+c2=(3.0)*(10**8)/sqrt(16)
+d=90.0
+r=300*1000000
+
+#set link x2 via x*(d/c2) inverse x*(c2/d)
+set link x2 via x*(d/c2)+2048 inverse (x-2048)*(c2/d)
+set link y2 via y*1 inverse y/1
+
+set title "PSD" font "arial,40"
+
+set bmargin 5
+set xlabel "Frequency [Hz]" font "arial,30" offset 0,-1,0
+set lmargin 18
+set ylabel "Power Spectral Density [dB]" font "arial,30" offset -8,0,0
+set rmargin 10
+
+set grid x y mx my
+set grid lt 0 lc "black" lw 1 back
+
+set key box
+
+#set xtics (40*1000000)
+
+set xtics font "arial,20"
+set ytics font "arial,30"
+
