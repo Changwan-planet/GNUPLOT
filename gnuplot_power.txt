@@ -1,0 +1,35 @@
+sample=4096
+c=(3.0)*(10**8)
+permit=25
+d=100.0
+
+k=(d/sample)/sqrt(permit)
+
+# C ; 90/4096 = C/sqrt(25) : x
+
+depth_interval=0.0044
+
+set link y2 via y+146 inverse y-146
+set link x2 via (x/depth_interval)+600 inverse (x-600)*depth_interval
+
+#set xtics 1
+set xtics nomirror
+
+set ytics 20
+set ytics nomirror
+
+set grid x y mx my
+set grid lt 0 lc "black" lw 1 
+
+set ylabel "POWER [dB]" font "arial,20"
+set xlabel "DEPTH [m]" font "arial,20"
+
+set xtics font "arial,10"
+set ytics font "arial,10"
+set key box
+
+#file_name(n) = sprintf("%d_HILBERT_STACKED_A_GPR.txt",n)
+#plot for[i=1:10] file_name(i) title " ".i." " with lines axes x2y2
+
+
+#plot for[a=1:10:1] "".a."_HILBERT_STACKED_A_GPR.txt" with lines axes x2y2
