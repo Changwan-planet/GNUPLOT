@@ -20,7 +20,8 @@ set link x2 via (x/depth_interval) inverse x*depth_interval
 set grid x y mx my
 set grid lt 0 lc "black" lw 1 
 
-set ylabel "Volt [V]" font "arial,20"
+set ylabel "dB" font "arial,20"
+#set ylabel "Volt [V]" font "arial,20"
 set xlabel "DEPTH [m]" font "arial,20"
 
 set xtics font "arial,10"

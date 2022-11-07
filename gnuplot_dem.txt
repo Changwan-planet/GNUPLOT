@@ -1,0 +1,32 @@
+
+dis_i = 0.05
+
+set link x2 via x/1 inverse x*1
+set link y2 via y/dis_i inverse y*dis_i
+
+
+set xlabel " X [m]" font "arial,20" offset "0"
+set ylabel " Y [m]" font "arial,20" offset "-2"
+set cblabel " Relative elevation [m]" font "arial,20" offset "4"
+
+
+set xtics font "arial, 15"
+set ytics font "arial, 15"
+set cbtics font "arial, 15"
+
+
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+
+
+
+Y = 1498.0 * dis_i
+X = 110.0 * 1.0
+set size ratio Y/X
+
+
+set grid x y mx my 
+set grid lt 0 lc "black" lw 1 back
+set grid front
+
+

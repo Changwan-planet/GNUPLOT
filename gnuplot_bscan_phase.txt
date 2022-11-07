@@ -48,17 +48,21 @@ set ytics
 set xtics font "arial,10"
 set ytics font "arial,10"
 
-#set yrange[100:0] 
-set yrange[5:-1] reverse
+ys = 10
+ye = -1
+xs = 0
+xe = 27
+#set yrange[25:-1] reverse 
+set yrange[ys:ye] reverse
 #set yrange[100:-10] reverse
-
+set xrange[xs:xe]
 
 #set palette positive
 #set palette model RGB
 #set palette defined (0 "black",1 "white")
 
 #set palette defined (-20 "black", 0 "black", 20 "white")
-set palette defined (0 "black", 0.5 "black", 1 "white")
+#set palette defined (0 "black", 0.5 "black", 1 "white")
 #set palette defined (0 "black", 0.3 "black", 1 "white")
 #set palette defined (0 "dark-grey", 0.7 "black", 1 "white")
 
@@ -68,10 +72,10 @@ set palette defined (0 "black", 0.5 "black", 1 "white")
 #                     1 '#90ff70',\
 #                     2 '#ee0000')
 
-set palette defined (0 "blue", 0.5 "light-grey", 1 "red")
+#set palette defined (0 "blue", 0.5 "light-grey", 1 "red")
 #set palette defined (-10 "white", 0 "blue", 0 "red", 10 "white")
 
-#set cbrange [-20:20]
+set cbrange [0:360]
 
 #set palette model rainbow
 #set palette negative
@@ -81,4 +85,4 @@ set palette defined (0 "blue", 0.5 "light-grey", 1 "red")
 
 #set size ratio rat
 #set size 2,1
-set size ratio 12.0/27.0
+set size ratio 2*ys/27.0

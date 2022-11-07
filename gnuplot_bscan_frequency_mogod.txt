@@ -1,0 +1,90 @@
+sample=512
+c=3*(10**8)
+permit=9.0
+#dep=100.0
+
+t_window = 213.457859*10**(-9)
+ 
+ dep = t_window*(c/sqrt(permit))
+ print dep
+ 
+#MOGOD
+dis = 115.0
+#int = 1072.0
+
+rat = dep/dis
+
+#k=(dep/sample)/sqrt(permit)
+k=(dep/sample)
+
+#dis_interval = dis/int
+dis_interval = 0.05
+
+depth_interval = k
+
+#msr = 0  #most strongest response
+msr = 39  #most strongest response
+
+set link y2 via (y/depth_interval)+msr inverse (y-msr)*depth_interval
+#set link y2 via (y/depth_interval)+msr inverse (y-msr)*depth_interval
+#set link y2 via (y/depth_interval) inverse y*depth_interval
+
+set link x2 via x/dis_interval inverse x*dis_interval
+
+set title "MOGOD GPR 500 MHz" font "arial, 20"
+set xlabel "DISTANCE [m]" font "arial,20"
+set ylabel "DEPTH [m] ({/Symbol e}=9)" font "arial,15" offset "0"
+set cblabel "[deg.]" font "arial,15" offset "4"
+ 
+set lmargin at screen 0.1
+set rmargin at screen 0.8
+
+set xtics font "arial,15"
+set ytics font "arial,15"
+set cbtics 90 font "arial,15"
+
+
+ys = 2
+ye = -1
+xs = 0
+xe = dis
+#set yrange[100:0] reverse 
+set yrange[ys:ye] reverse
+#set yrange[100:-10] reverse
+set xrange[xs:xe]
+
+#set palette positive
+#set palette model RGB
+#set palette defined (0 "black",1 "white")
+
+#set palette defined (-20 "black", 0 "black", 20 "white")
+#set palette defined (0 "black", 0.5 "black", 1 "white")
+#set palette defined (0 "black", 0.3 "black", 1 "white")
+#set palette defined (0 "dark-grey", 0.7 "black", 1 "white")
+
+#set palette defined (0 "white",1 "black")
+
+set palette defined ( 0 '#000090',\
+                       1 '#000fff',\
+                       2 '#0090ff',\
+                       3 '#0fffee',\
+                       4 '#90ff70',\
+                       5 '#ffee00',\
+                       6 '#ff7000',\
+                       7 '#ee0000',\
+                       8 '#7f0000')
+
+#set palette defined (0 "blue", 0.5 "light-grey", 1 "red")
+#set palette defined (-10 "white", 0 "blue", 0 "red", 10 "white")
+
+set cbrange [0:360]
+
+#set palette model rainbow
+#set palette negative
+#set palette model HSV
+
+#set key box
+
+#set size ratio rat
+#set size 2,1
+set size ratio 4*ys/115.0
